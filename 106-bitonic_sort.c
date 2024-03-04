@@ -66,12 +66,12 @@ void bitonic_seq(int *array, size_t size, size_t start, size_t seq, char flow)
 
 	if (seq > 1)
 	{
-		printf("Merging [%lu / %lu] (%s):\n", seq, size, str);
+		printf("Merging [%lu/%lu] (%s):\n", seq, size, str);
 		print_array(array + start, seq);
 		bitonic_seq(array, size, start, cut, UP);
 		bitonic_seq(array, size, start + cut, cut, DOWN);
 		bitonic_merge(array, size, start, seq, flow);
-		printf("Result [%lu / %lu] (%s):\n", seq, size, str);
+		printf("Result [%lu/%lu] (%s):\n", seq, size, str);
 		print_array(array + start, seq);
 	}
 }
